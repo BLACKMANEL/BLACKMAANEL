@@ -1,0 +1,45 @@
+alumelhor_desem = ""
+alupior_desem = ""
+
+nota_men_desem = 10
+nota_mai_desem = -1
+
+media_turma = 0
+nt = []
+
+alunos_aprovados = 0
+alunos_reprovados = 0
+
+alunos = int(input("Quantos alunos para a avaliação ?  "))
+#  
+for i in range(alunos):
+
+ nome = (input("Qual o seu nome ?  "))    
+ nota = int(input("digite sua nota ?  "))
+ nt.append(nota)
+
+ if nota >= 7:
+  print("Aprovado")
+  alunos_aprovados +=1
+ if nota >= nota_mai_desem: 
+  nota_mai_desem = nota
+  alumelhor_desem = nome  
+ 
+ if nota < 7:
+  print("Reprovado")
+  alunos_reprovados +=1
+ if nota <= nota_men_desem:
+  nota_men_desem = nota
+  alupior_desem = nome  
+
+media_turma = sum(nt) / alunos
+ # sum acumulador de notas da lista 
+print("=="*20)
+print("Aluno com maior desempenho foi:",alumelhor_desem)  
+print("Aluno com pior desempenho foi:",alupior_desem)  
+print("=="*20)
+print("A média da turma é:",media_turma)
+print("=="*20)
+print("Quantidade de alunos aprovados:",alunos_aprovados)
+print("Quantidade de alunos reprovados:",alunos_reprovados)
+print("=="*20)
